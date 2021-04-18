@@ -99,9 +99,6 @@ class NewDrawerList extends State<DrawerList> {
         child: ListView.builder(
             itemCount: labels.length,
             itemBuilder: (context, index) {
-              Divider(
-                thickness: 20,
-              );
               return Column(children: <Widget>[
                 Container(
                     child: index == 1 || index == 7

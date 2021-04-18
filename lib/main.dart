@@ -99,16 +99,27 @@ class NewDrawerList extends State<DrawerList> {
         child: ListView.builder(
             itemCount: labels.length,
             itemBuilder: (context, index) {
-              return ListTile(
-                leading: Icon(icons[index], size: 20),
-                title: Text(labels[index],
-                    style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                dense: true,
+              Divider(
+                thickness: 20,
               );
+              return Column(children: <Widget>[
+                Container(
+                    child: index == 1 || index == 7
+                        ? Divider(
+                            thickness: 3,
+                          )
+                        : null),
+                ListTile(
+                  leading: Icon(icons[index], size: 20),
+                  title: Text(labels[index],
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  dense: true,
+                )
+              ]);
             }));
   }
 }
